@@ -1,0 +1,17 @@
+name: On Push
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Release to Maven
+    runs-on: ubuntu-latest
+    steps:
+    - name: Release
+      run: |
+        echo "GITHUB_REF: "${GITHUB_REF}
+        echo "GITHUB_REF_NAME: "${GITHUB_REF_NAME}
+        echo "GITHUB_REF_TYPE: "${GITHUB_REF_TYPE}
+        echo "GITHUB_SHA: "${GITHUB_SHA}
+        echo "GITHUB_TRIGGERING_ACTOR: "${GITHUB_TRIGGERING_ACTOR}
+        echo "GITHUB_WORKFLOW: "${GITHUB_WORKFLOW}

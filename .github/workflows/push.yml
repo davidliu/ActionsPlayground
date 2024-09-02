@@ -1,0 +1,22 @@
+name: On Push
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+      - 'NOTICE'
+      - '.gitignore'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Do stuff
+      id: stuff
+      run: |
+        echo "OUTPUT='true'" >> "$GITHUB_OUTPUT"
+
+  release:
+    runs-on: ubuntu-latest
+    uses: ./.github/workflows/release.yml
