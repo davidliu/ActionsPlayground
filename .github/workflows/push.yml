@@ -19,4 +19,4 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-    uses: ./.github/workflows/release.yml
+    uses: .github/workflows/release.yml
