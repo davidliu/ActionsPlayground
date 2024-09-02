@@ -16,7 +16,13 @@ jobs:
       id: stuff
       run: |
         echo "OUTPUT='true'" >> "$GITHUB_OUTPUT"
+    outputs:
+      OUTPUT: ${{ steps.stuff.outputs.OUTPUT }}
 
   release:
+    needs: build
     runs-on: ubuntu-latest
-    uses: .github/workflows/release.yml
+    if: ${{ needs.build.outputs.OUTPUT == 'true' }}
+    steps: 
+    - name: Release
+      uses: .github/workflows/release.yml
