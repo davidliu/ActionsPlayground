@@ -15,7 +15,7 @@ jobs:
     - name: Do stuff
       id: stuff
       run: |
-        echo "OUTPUT='true'" >> "$GITHUB_OUTPUT"
+        echo "OUTPUT=true" >> "$GITHUB_OUTPUT"
     outputs:
       OUTPUT: ${{ steps.stuff.outputs.OUTPUT }}
 
