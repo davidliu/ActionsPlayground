@@ -21,6 +21,5 @@ jobs:
 
   release:
     needs: build
-    runs-on: ubuntu-latest
     if: ${{ needs.build.outputs.OUTPUT == 'true' }}
     uses: ./.github/workflows/release.yml
